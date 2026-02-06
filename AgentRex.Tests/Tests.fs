@@ -864,7 +864,7 @@ module RetryTests =
     Assert.Equal(2, attempts)
 // unnamed ends here
 
-// [[file:index.org::14329]]
+// [[file:index.org::14330]]
 module MergeTests =
   
   [<Fact>]
@@ -887,7 +887,7 @@ module MergeTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::14710]]
+// [[file:index.org::14711]]
 module MergeAllTests =
   
   [<Fact>]
@@ -912,7 +912,7 @@ module MergeAllTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::15152]]
+// [[file:index.org::15153]]
 module ChainTests =
   
   [<Fact>]
@@ -940,7 +940,7 @@ module ChainTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::15646]]
+// [[file:index.org::15636]]
 module SwitchMapTests =
   
   [<Fact>]
@@ -965,7 +965,7 @@ module SwitchMapTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::16086]]
+// [[file:index.org::16076]]
 module LatestTests =
   
   [<Fact>]
@@ -979,7 +979,7 @@ module LatestTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::16352]]
+// [[file:index.org::16342]]
 module ApplyLatestTests =
   
   [<Fact>]
@@ -992,7 +992,7 @@ module ApplyLatestTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::16731]]
+// [[file:index.org::16721]]
 module UntilStreamTests =
   
   [<Fact>]
@@ -1005,7 +1005,7 @@ module UntilStreamTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::17100]]
+// [[file:index.org::17090]]
 module SinceStreamTests =
   
   [<Fact>]
@@ -1018,7 +1018,7 @@ module SinceStreamTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::17452]]
+// [[file:index.org::17445]]
 module BufferTests =
   
   [<Fact>]
@@ -1033,7 +1033,7 @@ module BufferTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::17839]]
+// [[file:index.org::17832]]
 module BufferTimeTests =
   
   [<Fact>]
@@ -1045,7 +1045,7 @@ module BufferTimeTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::18250]]
+// [[file:index.org::18243]]
 module WindowTests =
   
   [<Fact>]
@@ -1057,7 +1057,7 @@ module WindowTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::18793]]
+// [[file:index.org::18786]]
 module EagerTests =
   
   [<Fact>]
@@ -1069,7 +1069,7 @@ module EagerTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::19923]]
+// [[file:index.org::19916]]
 module ReplaySubjectTests =
   
   [<Fact>]
@@ -1088,7 +1088,7 @@ module ReplaySubjectTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::20260]]
+// [[file:index.org::20253]]
 module ReplayTests =
   
   [<Fact>]
@@ -1110,7 +1110,7 @@ module ReplayTests =
     } |> Async.RunSynchronously
 // unnamed ends here
 
-// [[file:index.org::20600]]
+// [[file:index.org::20593]]
 module ReplayFactoryTests =
   
   [<Fact>]

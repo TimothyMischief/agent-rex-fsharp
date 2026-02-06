@@ -521,7 +521,7 @@ let retry (options: RetryOptions) (streamFactory: unit -> AsyncSeq<'T>) : AsyncS
   }
 // unnamed ends here
 
-// [[file:index.org::14313]]
+// [[file:index.org::14314]]
 /// <summary>
 /// Merges multiple streams into a single stream, emitting values as they arrive.
 /// </summary>
@@ -535,7 +535,7 @@ let merge2 (source1: AsyncSeq<'T>) (source2: AsyncSeq<'T>) : AsyncSeq<'T> =
   AsyncSeq.mergeAll [source1; source2]
 // unnamed ends here
 
-// [[file:index.org::14696]]
+// [[file:index.org::14697]]
 /// <summary>
 /// Flattens a stream of streams by merging them into a single stream.
 /// Note: Collects all inner streams first, then merges them.
@@ -547,7 +547,7 @@ let mergeAll (streamOfStreams: AsyncSeq<AsyncSeq<'T>>) : AsyncSeq<'T> =
   }
 // unnamed ends here
 
-// [[file:index.org::15135]]
+// [[file:index.org::15136]]
 /// <summary>
 /// Maps each value to a stream and flattens the results.
 /// Also known as chain or flatMap in some libraries.
@@ -562,7 +562,7 @@ let flatMap (selector: 'T -> AsyncSeq<'U>) (source: AsyncSeq<'T>) : AsyncSeq<'U>
   chain selector source
 // unnamed ends here
 
-// [[file:index.org::15634]]
+// [[file:index.org::15624]]
 /// <summary>
 /// Maps each value to a stream, canceling the previous inner stream when a new value arrives.
 /// Note: This is a simplified implementation using collect (similar to flatMap).
@@ -572,7 +572,7 @@ let switchMap (selector: 'T -> AsyncSeq<'U>) (source: AsyncSeq<'T>) : AsyncSeq<'
   AsyncSeq.collect selector source
 // unnamed ends here
 
-// [[file:index.org::16069]]
+// [[file:index.org::16059]]
 /// <summary>
 /// Combines two streams, emitting tuples of latest values whenever either emits.
 /// Simplified implementation - full reactive combination requires complex coordination.
@@ -587,7 +587,7 @@ let latest2 (source1: AsyncSeq<'T>) (source2: AsyncSeq<'U>) : AsyncSeq<'T * 'U> 
   }
 // unnamed ends here
 
-// [[file:index.org::16341]]
+// [[file:index.org::16331]]
 /// <summary>
 /// Applies the latest function to the latest value.
 /// </summary>
@@ -596,7 +596,7 @@ let applyLatest (fnStream: AsyncSeq<'T -> 'U>) (valueStream: AsyncSeq<'T>) : Asy
   |> AsyncSeq.map (fun (fn, value) -> fn value)
 // unnamed ends here
 
-// [[file:index.org::16717]]
+// [[file:index.org::16707]]
 /// <summary>
 /// Emits values from source until stop stream emits.
 /// Note: Simplified implementation - takes all values from source for now.
@@ -608,7 +608,7 @@ let untilStream (_stop: AsyncSeq<'TStop>) (source: AsyncSeq<'T>) : AsyncSeq<'T> 
   source
 // unnamed ends here
 
-// [[file:index.org::17082]]
+// [[file:index.org::17072]]
 /// <summary>
 /// Emits values from source only after start stream emits.
 /// </summary>
@@ -624,7 +624,7 @@ let sinceStream (start: AsyncSeq<'TStart>) (source: AsyncSeq<'T>) : AsyncSeq<'T>
   }
 // unnamed ends here
 
-// [[file:index.org::17433]]
+// [[file:index.org::17426]]
 /// <summary>
 /// Collects values into lists of the specified size.
 /// </summary>
@@ -641,7 +641,7 @@ let buffer' (size: int) (source: AsyncSeq<'T>) : AsyncSeq<List<'T>> =
   }
 // unnamed ends here
 
-// [[file:index.org::17820]]
+// [[file:index.org::17813]]
 /// <summary>
 /// Collects values over time windows (simplified).
 /// </summary>
@@ -658,7 +658,7 @@ let bufferTime (ms: int) (source: AsyncSeq<'T>) : AsyncSeq<List<'T>> =
   }
 // unnamed ends here
 
-// [[file:index.org::18240]]
+// [[file:index.org::18233]]
 /// <summary>
 /// Splits source into windows of specified size.
 /// </summary>
@@ -666,7 +666,7 @@ let window (size: int) (source: AsyncSeq<'T>) : AsyncSeq<List<'T>> =
   buffer' size source
 // unnamed ends here
 
-// [[file:index.org::18776]]
+// [[file:index.org::18769]]
 /// <summary>
 /// Pre-fetches values from source (simplified).
 /// Note: AsyncSeq is lazy by default, caching provides buffering.
@@ -681,7 +681,7 @@ let eagerNow (bufferSize: int) (source: AsyncSeq<'T>) : AsyncSeq<'T> =
   AsyncSeq.cache source
 // unnamed ends here
 
-// [[file:index.org::19884]]
+// [[file:index.org::19877]]
 /// <summary>
 /// A multicasting subject that replays buffered values to new subscribers.
 /// Simplified implementation using MailboxProcessor.
@@ -718,7 +718,7 @@ type ReplaySubject<'T>(bufferSize: int) =
   member this.SubscriberCount = subscribers.Count
 // unnamed ends here
 
-// [[file:index.org::20243]]
+// [[file:index.org::20236]]
 /// <summary>
 /// Creates a replay wrapper for a stream (simplified).
 /// </summary>
@@ -733,7 +733,7 @@ let share (source: AsyncSeq<'T>) : AsyncSeq<'T> =
   AsyncSeq.cache source
 // unnamed ends here
 
-// [[file:index.org::20589]]
+// [[file:index.org::20582]]
 /// <summary>
 /// Creates a factory that produces independent copies of a buffered stream.
 /// </summary>
